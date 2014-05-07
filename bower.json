@@ -1,0 +1,16 @@
+{
+  "name": "json-stat",
+  "version": "0.0.0",
+  "authors": [
+    "Wendy Wang <wilxnwang@gmail.com>"
+  ],
+  "description": "json statistics lib",
+  "main": "src/json-stat",
+  "keywords": [
+    "json",
+    "statistics",
+    "data"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/wendycan/json-stat"
+}
