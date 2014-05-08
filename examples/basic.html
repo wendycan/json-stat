@@ -1,0 +1,61 @@
+<!doctype>
+<head>
+    <script src="../vendor/bower_components/moment/moment.js"></script>
+    <script src="../src/json-stat.js"></script>
+</head>
+
+<body>
+<div id="content">
+    <h3>This is a test.</h3>
+</div>
+
+<script>
+  var data = [
+    {
+        "t": "2014-03-27T09:13:02.607Z",
+        "method": "GET",
+        "v": {
+            "ip": "127.0.0.1",
+            "method": "GET",
+            "fullpath": "/v1/fdfd/datastreams"
+        }
+    },
+    {
+        "t": "2014-03-27T09:34:40.151Z",
+        "method": "GET",
+        "v": {
+            "ip": "127.0.0.1",
+            "method": "GET",
+            "fullpath": "/v1/fdfd/datastreams",
+        }
+    },
+    {
+        "t": "2014-03-28T09:34:40.151Z",
+        "method": "GET",
+        "v": {
+            "ip": "127.0.0.1",
+            "method": "GET",
+            "fullpath": "/v1/fdfd/datastreams",
+        }
+    },
+    {
+        "t": "2014-03-27T09:35:28.015Z",
+        "method": "POST",
+        "v": {
+            "ip": "127.0.0.1",
+            "method": "POST",
+            "fullpath": "/v1/fdfd/datastreams",
+        }
+    }]
+    var jsonStat = new JsonStat(data);
+    option = {
+        time: 't',
+        by: 'day'
+    }
+    jsonStat.statByTime(option);
+// handle data
+
+</script>
+
+</body>
+

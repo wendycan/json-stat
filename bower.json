@@ -1,6 +1,6 @@
 {
   "name": "json-stat",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "authors": [
     "Wendy Wang <wilxnwang@gmail.com>"
   ],
@@ -10,6 +10,12 @@
     "json",
     "statistics",
     "data"
+  ],
+  "dependencies": {
+    "moment": "~2.5.1"
+  },
+  "ignore": [
+    "vendor/bower_components"
   ],
   "license": "MIT",
   "homepage": "https://github.com/wendycan/json-stat"
