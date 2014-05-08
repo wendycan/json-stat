@@ -27,7 +27,7 @@ class window.JsonStat
               result0.push tmp
               last = result0[result0.length-1]
             if moment(point[time]).isSame(last[target.time],'day')
-              last.count++
+              last[target.count]++
             else
               tmp[target.time] = moment(point[time]).startOf('day').valueOf()
               tmp[target.count] = 1
@@ -41,7 +41,7 @@ class window.JsonStat
               result1.push tmp
               last = result1[result1.length-1]
             if moment(point[time]).isSame(last[target.time],'day')
-              last.count++
+              last[target.count]++
             else
               tmp[target.time] = moment(point[time]).startOf('day').valueOf()
               tmp[target.count] = 1
