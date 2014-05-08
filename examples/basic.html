@@ -48,11 +48,15 @@
         }
     }]
     var jsonStat = new JsonStat(data);
-    option = {
+    options = {
         time: 't',
-        by: 'day'
+        by: 'day',
+        condition: {
+            key: 'method',
+            values: ['GET', 'POST']
+        }
     }
-    jsonStat.statByTime(option);
+    jsonStat.statByTime(options);
 // handle data
 
 </script>
