@@ -46,11 +46,10 @@ class window.JsonStat
               tmp[target.time] = moment(point[time]).startOf('day').valueOf()
               tmp['count'] = 1
               result1.push tmp
-      result = [result0,result1]
-      console.log result
     else
       # statistics by others
       alert('Just can count by day')
+    [result0,result1]
 
   sortCollection: ->
 

@@ -6,7 +6,7 @@
     }
 
     JsonStat.prototype.statByTime = function(options) {
-      var condition, key, point, result, result0, result1, target, time, values, _fn, _i, _len, _ref;
+      var condition, key, point, result0, result1, target, time, values, _fn, _i, _len, _ref;
       result0 = [];
       result1 = [];
       condition = options.condition;
@@ -55,11 +55,10 @@
           point = _ref[_i];
           _fn(point);
         }
-        result = [result0, result1];
-        return console.log(result);
       } else {
-        return alert('Just can count by day');
+        alert('Just can count by day');
       }
+      return [result0, result1];
     };
 
     JsonStat.prototype.sortCollection = function() {};
