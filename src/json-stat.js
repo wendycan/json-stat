@@ -23,7 +23,7 @@
             last = result0[result0.length - 1];
             if (last === void 0) {
               tmp[target.time] = moment(point[time]).startOf('day').valueOf();
-              tmp['count'] = 0;
+              tmp[target.count] = 0;
               result0.push(tmp);
               last = result0[result0.length - 1];
             }
@@ -31,14 +31,14 @@
               return last.count++;
             } else {
               tmp[target.time] = moment(point[time]).startOf('day').valueOf();
-              tmp['count'] = 1;
+              tmp[target.count] = 1;
               return result0.push(tmp);
             }
           } else if (point[key] === values[1]) {
             last = result1[result1.length - 1];
             if (last === void 0) {
               tmp[target.time] = moment(point[time]).startOf('day').valueOf();
-              tmp['count'] = 0;
+              tmp[target.count] = 0;
               result1.push(tmp);
               last = result1[result1.length - 1];
             }
@@ -46,7 +46,7 @@
               return last.count++;
             } else {
               tmp[target.time] = moment(point[time]).startOf('day').valueOf();
-              tmp['count'] = 1;
+              tmp[target.count] = 1;
               return result1.push(tmp);
             }
           }
