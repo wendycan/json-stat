@@ -20,7 +20,7 @@
             last = get_result[get_result.length - 1];
             if (last === void 0) {
               tmp = {
-                t: moment(point.t).startOf('day'),
+                t: moment(point.t).startOf('day').valueOf(),
                 get_count: 0
               };
               get_result.push(tmp);
@@ -30,7 +30,7 @@
               return last.get_count++;
             } else {
               tmp = {
-                t: moment(point.t).startOf('day'),
+                t: moment(point.t).startOf('day').valueOf(),
                 get_count: 1
               };
               return get_result.push(tmp);
@@ -39,7 +39,7 @@
             last = post_result[post_result.length - 1];
             if (last === void 0) {
               tmp = {
-                t: moment(point.t).startOf('day'),
+                t: moment(point.t).startOf('day').valueOf(),
                 post_count: 0
               };
               post_result.push(tmp);
@@ -49,7 +49,7 @@
               return last.post_count++;
             } else {
               tmp = {
-                t: moment(point.t).startOf('day'),
+                t: moment(point.t).startOf('day').valueOf(),
                 post_count: 1
               };
               return post_result.push(tmp);

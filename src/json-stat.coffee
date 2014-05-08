@@ -18,25 +18,25 @@ class window.JsonStat
           if point.method == 'GET'
             last = get_result[get_result.length-1]
             if last == undefined
-              tmp = {t: moment(point.t).startOf('day'), get_count: 0}
+              tmp = {t: moment(point.t).startOf('day').valueOf(), get_count: 0}
               get_result.push tmp
               last = get_result[get_result.length-1]
             if moment(point.t).isSame(last.t,'day')
               last.get_count++
             else
-              tmp = {t: moment(point.t).startOf('day'), get_count: 1}
+              tmp = {t: moment(point.t).startOf('day').valueOf(), get_count: 1}
               get_result.push tmp
           #  count POST method
           else if point.method == 'POST'
             last = post_result[post_result.length-1]
             if last == undefined
-              tmp = {t: moment(point.t).startOf('day'), post_count: 0}
+              tmp = {t: moment(point.t).startOf('day').valueOf(), post_count: 0}
               post_result.push tmp
               last = post_result[post_result.length-1]
             if moment(point.t).isSame(last.t,'day')
               last.post_count++
             else
-              tmp = {t: moment(point.t).startOf('day'), post_count: 1}
+              tmp = {t: moment(point.t).startOf('day').valueOf(), post_count: 1}
               post_result.push tmp
       console.log get_result
       console.log post_result
