@@ -6,53 +6,47 @@
     }
 
     JsonStat.prototype.statByTime = function(options) {
-      var condition, key, point, result, result0, result1, time, values, _fn, _i, _len, _ref;
+      var condition, key, point, result, result0, result1, target, time, values, _fn, _i, _len, _ref;
       result0 = [];
       result1 = [];
       condition = options.condition;
       time = options.time;
       key = options.condition.key;
       values = options.condition.values;
+      target = options.target;
       if (options.by === 'day') {
         _ref = this.collection;
         _fn = function(point) {
           var last, tmp;
+          tmp = {};
           if (point[key] === values[0]) {
             last = result0[result0.length - 1];
             if (last === void 0) {
-              tmp = {
-                t: moment(point[time]).startOf('day').valueOf(),
-                count: 0
-              };
+              tmp[target.time] = moment(point[time]).startOf('day').valueOf();
+              tmp['count'] = 0;
               result0.push(tmp);
               last = result0[result0.length - 1];
             }
-            if (moment(point[time]).isSame(last[time], 'day')) {
+            if (moment(point[time]).isSame(last[target.time], 'day')) {
               return last.count++;
             } else {
-              tmp = {
-                t: moment(point[time]).startOf('day').valueOf(),
-                count: 1
-              };
+              tmp[target.time] = moment(point[time]).startOf('day').valueOf();
+              tmp['count'] = 1;
               return result0.push(tmp);
             }
           } else if (point[key] === values[1]) {
             last = result1[result1.length - 1];
             if (last === void 0) {
-              tmp = {
-                t: moment(point[time]).startOf('day').valueOf(),
-                count: 0
-              };
+              tmp[target.time] = moment(point[time]).startOf('day').valueOf();
+              tmp['count'] = 0;
               result1.push(tmp);
               last = result1[result1.length - 1];
             }
-            if (moment(point[time]).isSame(last[time], 'day')) {
+            if (moment(point[time]).isSame(last[target.time], 'day')) {
               return last.count++;
             } else {
-              tmp = {
-                t: moment(point[time]).startOf('day').valueOf(),
-                count: 1
-              };
+              tmp[target.time] = moment(point[time]).startOf('day').valueOf();
+              tmp['count'] = 1;
               return result1.push(tmp);
             }
           }
