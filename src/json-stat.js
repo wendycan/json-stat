@@ -22,30 +22,30 @@
           if (point[key] === values[0]) {
             last = result0[result0.length - 1];
             if (last === void 0) {
-              tmp[target.time] = moment(point[time]).startOf('day').valueOf();
+              tmp[target.time] = moment(point[time]).startOf('day').valueOf() / 1000;
               tmp[target.count] = 0;
               result0.push(tmp);
               last = result0[result0.length - 1];
             }
-            if (moment(point[time]).isSame(last[target.time], 'day')) {
+            if (moment(point[time]).isSame(last[target.time] * 1000, 'day')) {
               return last[target.count]++;
             } else {
-              tmp[target.time] = moment(point[time]).startOf('day').valueOf();
+              tmp[target.time] = moment(point[time]).startOf('day').valueOf() / 1000;
               tmp[target.count] = 1;
               return result0.push(tmp);
             }
           } else if (point[key] === values[1]) {
             last = result1[result1.length - 1];
             if (last === void 0) {
-              tmp[target.time] = moment(point[time]).startOf('day').valueOf();
+              tmp[target.time] = moment(point[time]).startOf('day').valueOf() / 1000;
               tmp[target.count] = 0;
               result1.push(tmp);
               last = result1[result1.length - 1];
             }
-            if (moment(point[time]).isSame(last[target.time], 'day')) {
+            if (moment(point[time]).isSame(last[target.time] * 1000, 'day')) {
               return last[target.count]++;
             } else {
-              tmp[target.time] = moment(point[time]).startOf('day').valueOf();
+              tmp[target.time] = moment(point[time]).startOf('day').valueOf() / 1000;
               tmp[target.count] = 1;
               return result1.push(tmp);
             }
